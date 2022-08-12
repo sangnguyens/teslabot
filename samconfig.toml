@@ -1,0 +1,12 @@
+version = 0.1
+[sam_envs]
+[sam_envs.deploy]
+[sam_envs.deploy.parameters]
+stack_name = "Sentiment-Analysis"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-pcatkpeq1n2w"
+s3_prefix = "Sentiment-Analysis"
+region = "us-east-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+image_repositories = ["SentimentFunction=681261969843.dkr.ecr.us-east-1.amazonaws.com/sentimentanalysis000c2c29/sentimentfunction35d37012repo"]
