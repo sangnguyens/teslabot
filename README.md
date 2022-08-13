@@ -4,18 +4,42 @@ Sentiment analysis (or opinion mining) is a natural language processing (NLP) te
 Sentiment analysis is often performed on textual data to help businesses monitor brand and product sentiment in customer feedback, and understand customer 
 needs.
 
-In this demo, I use the pretrained model 'distilbert-base-uncased-finetuned-sst-2-english' from huggingface[huggingface.com] to build and deploy a bot 
+In this demo, I use the pretrained model `distilbert-base-uncased-finetuned-sst-2-english` from [huggingface](huggingface.com) to build and deploy a bot 
 that analyze comment from social media with SAM CLI.
 
-Follow the instruction below to reproduce:
+# Rubic
+
+1. What is the definition of a serverless application?
+
+	Serverless is a cloud computing execution model where the cloud provider dynamically manages the allocation and provisioning of servers. A 
+serverless application runs in stateless compute containers that are event-triggered, ephemeral (may last for one invocation), and fully managed by the 
+cloud provider
+
+ 2. What is the definition of model serving and what are the two types?
+ 
+	Model serving is to host machine-learning models (on cloud or on premises) and to make their functions available.
+	Two types: batch and online. Batch means taht you feed the model as scheduled job. Online  means that you deploy the model with an endpoint so 
+applications can send a request to the model and get a fast response.
+
+3. What are 3 advantages of deploying using Model Serving methods Vs. deploying on GitHub Pages or HuggingFace for free?
+
+	Three advantages of deploying using Model serving method vs. deploying on Github or HuggingFace:
+		- Higher security
+		- Be able to arange or customize resources for specific services
+		- More reliable
+4. What Is Machine Learning Inference? How Does Machine Learning Inference Work? Please walk us through an example?
+
+	Machine learning inference is the ability of a system to make predictions from novel data.
+	Machine learning inference ignest data (online or batch) and produce and put outcomes into a specific location.
+	An example of ML inference is movie/search recommender system, the system get input as input from user like mouse click (touch on mobile device) 
+and make a recommendation for user. 
+
 <details>
-<summary>
+	<summary>Follow the instruction below to reproduce:</summary>
 <p align = "center" draggable=”false” ><img src="https://user-images.githubusercontent.com/37101144/161836199-fdb0219d-0361-4988-bf26-48b0fad160a3.png"
      width="200px"
      height="auto"/>
 </p>
-
-
 
 # <h1 align="center" id="heading">Model Serving</h1>
 
@@ -79,7 +103,7 @@ is not to be included in your command**:
 inside the docker image. The processed template file is saved in the `.aws-sam/build` folder. 
 
    <details>
-   <summary>View the long build output from SAM CLI </summary>
+   	<summary>View the long build output from SAM CLI </summary><br>
 
    ```
    teslabot % sam build
@@ -377,7 +401,7 @@ sample `event.json` is provided under `events` directory.
    ```
 
    <details>
-   <summary> Click here to see a sample output.</summary>
+   <summary> Click here to see a sample output.</summary><br>
 
    ```
    Invoking Container created from sentimentfunction:python3.9-v1
@@ -544,28 +568,5 @@ their applications: [AWS Serverless Application Repository main page](https://aw
 with a simpler syntax for configuring common serverless application resources such as functions, triggers, and APIs. For resources not included in [the 
 SAM specification](https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md), you can use standard [AWS 
 CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) resource types.
-</summary>
 </details>
 
-# Rubic
-
-1. What is the definition of a serverless application?
-	Serverless is a cloud computing execution model where the cloud provider dynamically manages the allocation and provisioning of servers. A 
-serverless application runs in stateless compute containers that are event-triggered, ephemeral (may last for one invocation), and fully managed by the 
-cloud provider
-
- 2. What is the definition of model serving and what are the two types?
-	Model serving is to host machine-learning models (on cloud or on premises) and to make their functions available.
-	Two types: batch and online. Batch means taht you feed the model as scheduled job. Online  means that you deploy the model with an endpoint so 
-applications can send a request to the model and get a fast response.
-
-3. What are 3 advantages of deploying using Model Serving methods Vs. deploying on GitHub Pages or HuggingFace for free?
-	Three advantages of deploying using Model serving method vs. deploying on Github or HuggingFace:
-		- Higher security
-		- Be able to arange or customize resources for specific services
-		- More reliable
-4. What Is Machine Learning Inference? How Does Machine Learning Inference Work? Please walk us through an example?
-	Machine learning inference is the ability of a system to make predictions from novel data.
-	Machine learning inference ignest data (online or batch) and produce and put outcomes into a specific location.
-	An example of ML inference is movie/search recommender system, the system get input as input from user like mouse click (touch on mobile device) 
-and make a recommendation for user. 
